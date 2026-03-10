@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICUMSA Color Estimation in VHP Sugar | CV + ML Case Study</title>
+  <meta name="description" content="Public case-study portfolio page summarizing a private computer vision and machine learning project for ICUMSA color classification and estimation in VHP sugar." />
+  <meta property="og:title" content="ICUMSA Color Estimation in VHP Sugar | CV + ML Case Study" />
+  <meta property="og:description" content="A public portfolio summary of a private industrial AI project using computer vision and ensemble learning for sugar quality control." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="#top">ICUMSA Case Study</a>
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#modeling">Modeling</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow">Private Project · Public Portfolio Summary</p>
+      <h1>ICUMSA Color Classification and Estimation in VHP Sugar</h1>
+      <p class="subtitle">A computer vision and machine learning workflow for faster, non-destructive quality analysis under industrial constraints.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="Article.pdf" target="_blank" rel="noopener">Read Full PDF</a>
+        <!-- Replace YOUR_GITHUB_USERNAME and YOUR_REPOSITORY_NAME -->
+        <a class="btn" href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME" target="_blank" rel="noopener">View GitHub Repository</a>
+      </div>
+      <ul class="tags" aria-label="Project tags">
+        <li>Computer Vision</li>
+        <li>Machine Learning</li>
+        <li>Industrial AI</li>
+        <li>Quality Control</li>
+      </ul>
+    </section>
+
+    <section id="summary" class="container section">
+      <h2>Executive Summary</h2>
+      <p>This case study presents a public summary of a private industrial ML initiative focused on ICUMSA color assessment in VHP sugar. Based on controlled image capture and ensemble learning, the work demonstrates a practical alternative to fully lab-centered routines, combining technical rigor with deployment-oriented response time and operational usability.</p>
+    </section>
+
+    <section id="problem" class="container section">
+      <h2>Business Problem</h2>
+      <p>ICUMSA color is a critical quality parameter in the sugar-energy sector. Conventional spectrophotometric routines are reliable but operationally expensive, slower in day-to-day flows, and dependent on reagents and laboratory handling. The project investigates whether a vision-based ML pipeline can support quicker, non-destructive analysis without discarding quality standards.</p>
+    </section>
+
+    <section id="role" class="container section">
+      <h2>My Role</h2>
+      <ul class="bullet-list">
+        <li>Curated and organized the image dataset for reproducible experiments.</li>
+        <li>Built and documented the preprocessing flow for standardized inputs.</li>
+        <li>Defined ROI-based CIELab feature extraction (mean L, a, b descriptors).</li>
+        <li>Ran comparative model experiments for classification and estimation tasks.</li>
+        <li>Designed and evaluated a stacking strategy (RF + SVM with HGB meta-learner).</li>
+        <li>Supported application prototyping for industrial-facing usage (Streamlit context).</li>
+      </ul>
+    </section>
+
+    <section id="data" class="container section">
+      <h2>Data Acquisition &amp; Preprocessing</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Acquisition Setup</h3>
+          <ul>
+            <li>Dataset with more than 5,000 labeled real images.</li>
+            <li>Two capture modes: <strong>solid</strong> (plate/Petri dish) and <strong>liquid</strong> (volumetric flask).</li>
+            <li>Controlled diffuse lighting in a lightbox with neutral background.</li>
+            <li>Three images per physical sample at different rotation angles.</li>
+            <li>Multiple smartphone devices used during image acquisition.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Processing Pipeline</h3>
+          <ul>
+            <li>Image standardization to 224 × 224 resolution.</li>
+            <li>Color representation in CIELab space.</li>
+            <li>Fixed ROI definition for consistent measurement area.</li>
+            <li>Extraction of mean L, a, b values as compact tabular features.</li>
+            <li>Preparation steps aligned for both model training and app inference.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="modeling" class="container section">
+      <h2>Modeling Approach</h2>
+      <p>The study frames prediction as machine learning tasks for ICUMSA assessment, using structured color features from the imaging pipeline. A stacking ensemble is used with Random Forest and SVM as base learners and Histogram Gradient Boosting as meta-learner. Evaluation uses 5-fold cross-validation, and class-imbalance handling/resampling is included in the protocol.</p>
+      <figure class="diagram-wrap">
+        <img src="assets/architecture-diagram.svg" alt="Pipeline diagram showing input images to preprocessing, feature extraction, RF and SVM base learners, HGB meta-learner, and prediction/report output." />
+      </figure>
+    </section>
+
+    <section id="results" class="container section">
+      <h2>Results</h2>
+      <div class="grid metrics">
+        <article class="metric card">
+          <h3>Data Scale</h3>
+          <p class="value">5,000+</p>
+          <p>Real labeled images used in experiments.</p>
+        </article>
+        <article class="metric card">
+          <h3>Validation Protocol</h3>
+          <p class="value">5-Fold CV</p>
+          <p>Consistent evaluation across model comparisons.</p>
+        </article>
+        <article class="metric card">
+          <h3>Inference Time</h3>
+          <p class="value">&lt; 10s</p>
+          <p>Practical response/report generation in the app workflow.</p>
+        </article>
+        <article class="metric card">
+          <h3>Model Selection</h3>
+          <p class="value">Stacking</p>
+          <p>Selected over isolated baselines/voting in the reported study.</p>
+        </article>
+      </div>
+      <p class="section-note">Operationally, the plate-based acquisition method was preferred for agility in routine use.</p>
+    </section>
+
+    <section id="impact" class="container section">
+      <h2>Operational Impact</h2>
+      <p>The prototype supports floor-level decision support by reducing dependency on fully manual laboratory cycles for each check. The reported economic analysis projects <strong>R$ 25,000</strong> in direct annual savings per industrial unit when applied under the study assumptions.</p>
+    </section>
+
+    <section id="confidentiality" class="container section">
+      <h2>Confidentiality Note</h2>
+      <p>This repository is a public case-study summary. The complete source code, raw datasets, model artifacts, and internal deployment assets remain private due to confidentiality obligations and intellectual property constraints.</p>
+    </section>
+
+    <section id="future" class="container section">
+      <h2>Future Work</h2>
+      <p>Future study directions include CNN-based approaches and transfer learning to evaluate potential gains in predictive performance and robustness under broader acquisition conditions.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© Case Study Portfolio</p>
+      <ul>
+        <!-- Replace YOUR_GITHUB_PROFILE_URL -->
+        <li><a href="YOUR_GITHUB_PROFILE_URL" target="_blank" rel="noopener">GitHub</a></li>
+        <!-- Replace YOUR_LINKEDIN_URL -->
+        <li><a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a></li>
+        <!-- Replace YOUR_EMAIL -->
+        <li><a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
