@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">ICUMSA ML Pipeline Architecture</title>
+  <desc id="desc">Input images flow through preprocessing and feature extraction into RF and SVM base learners, then into an HGB meta-learner, ending with prediction and report output.</desc>
+  <defs>
+    <style>
+      .box { fill: #fff; stroke: #cfd8e5; stroke-width: 2; rx: 10; }
+      .text { font: 500 19px Arial, sans-serif; fill: #243244; }
+      .small { font: 400 15px Arial, sans-serif; fill: #516173; }
+      .arrow { stroke: #7a8ca3; stroke-width: 2.4; marker-end: url(#m); }
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7a8ca3" />
+    </marker>
+  </defs>
+
+  <rect class="box" x="20" y="85" width="160" height="120" />
+  <text class="text" x="45" y="140">Input Images</text>
+  <text class="small" x="42" y="167">Solid / Liquid</text>
+
+  <rect class="box" x="220" y="85" width="180" height="120" />
+  <text class="text" x="250" y="137">Preprocessing</text>
+  <text class="small" x="246" y="165">Resize 224x224</text>
+
+  <rect class="box" x="440" y="85" width="200" height="120" />
+  <text class="text" x="456" y="137">Feature Extraction</text>
+  <text class="small" x="470" y="165">CIELab + ROI Mean</text>
+
+  <rect class="box" x="680" y="35" width="170" height="90" />
+  <text class="text" x="746" y="87" text-anchor="middle">RF</text>
+
+  <rect class="box" x="680" y="175" width="170" height="90" />
+  <text class="text" x="765" y="228" text-anchor="middle">SVM</text>
+
+  <rect class="box" x="890" y="85" width="190" height="120" />
+  <text class="text" x="914" y="137">HGB Meta-Learner</text>
+  <text class="small" x="929" y="165">Stacking Layer</text>
+
+  <rect class="box" x="1110" y="85" width="80" height="120" />
+  <text class="small" x="1121" y="137">Prediction</text>
+  <text class="small" x="1134" y="165">/</text>
+  <text class="small" x="1135" y="190">Report</text>
+
+  <line class="arrow" x1="180" y1="145" x2="220" y2="145" />
+  <line class="arrow" x1="400" y1="145" x2="440" y2="145" />
+  <line class="arrow" x1="640" y1="145" x2="680" y2="80" />
+  <line class="arrow" x1="640" y1="145" x2="680" y2="220" />
+  <line class="arrow" x1="850" y1="80" x2="890" y2="130" />
+  <line class="arrow" x1="850" y1="220" x2="890" y2="160" />
+  <line class="arrow" x1="1080" y1="145" x2="1110" y2="145" />
+</svg>
